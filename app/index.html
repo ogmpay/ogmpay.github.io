@@ -817,12 +817,12 @@ function iniciarApp() {
 }
 
 // ─── Llamar servidor ──────────────────────────────────────────
-const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbz-2rcJQz27u7BkWnpmfjlamp1gj_ikwODgrDbf6aLIsAKV86QkHWOEjxN-4vup7QsHbQ/exec';
+const WEBAPP_URL = 'https://api.ogmpay.com/api/accion';
 
 function llamarServidor(accion, params) {
   return fetch(WEBAPP_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'text/plain' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ accion: accion, params: params || {} })
   })
   .then(function(r) { return r.json(); })

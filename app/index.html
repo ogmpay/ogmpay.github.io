@@ -1148,11 +1148,27 @@ async function timbrarNueva() {
 }
 
 function guardarBorrador() { toast('Función de borrador próximamente','info'); }
-
+function construirConcepto(num) {
+  var tipo = document.getElementById('f-tipoServicio' + num).value;
+  var paciente = (document.getElementById('f-paciente' + num).value || '').trim().toUpperCase();
+  var procedimiento = (document.getElementById('f-procedimiento' + num).value || '').trim().toUpperCase();
+  var campo = document.getElementById('f-concepto' + num);
+  if (!tipo) { campo.value = ''; return; }
+  var concepto = tipo;
+  if (procedimiento) concepto += ' POR ' + procedimiento;
+  if (paciente) concepto += ' PARA EL PACIENTE_' + paciente;
+  campo.value = concepto;
+}
 function limpiarFormulario() {
-  ['f-medico','f-rfcEmisor','f-aseguradora','f-rfcAseguradora','f-nombreFiscal','f-cpAseguradora','f-concepto1','f-monto1','f-concepto2'].forEach(function(id){ var el=document.getElementById(id); if(el)el.value=''; });
-  document.getElementById('f-monto2').value=0;
-  document.getElementById('f-usoCfdi').value='G03';
+  ['f-medico','f-rfcEmisor','f-aseguradora','f-rfcAseguradora','f-nombreFiscal','f-cpAseguradora',
+   'f-concepto1','f-monto1','f-paciente1','f-procedimiento1',
+   'f-concepto2','f-paciente2','f-procedimiento2'].forEach(function(id){
+    var el=document.getElementById(id); if(el)el.value='';
+  });
+  document.getElementById('f-monto2').value = 0;
+  document.getElementById('f-usoCfdi').value = 'G03';
+  document.getElementById('f-tipoServicio1').value = '';
+  document.getElementById('f-tipoServicio2').value = '';
 }
 
 function abrirEditar(fila) {

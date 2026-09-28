@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -70,6 +69,33 @@
   .what-card h3 { font-size:16px; font-weight:700; color:white; margin-bottom:8px; }
   .what-card p { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.6; }
 
+  .plans { padding:100px 5%; background:var(--gray50); }
+  .plans-header { text-align:center; max-width:640px; margin:0 auto 64px; }
+  .plans h2 { font-size:clamp(28px,4vw,44px); font-weight:800; line-height:1.15; letter-spacing:-1px; color:var(--navy); margin-bottom:16px; }
+  .plans-sub { font-size:17px; color:var(--gray600); line-height:1.6; }
+  .plans-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; max-width:900px; margin:0 auto; }
+  .plan-card { background:white; border:1px solid var(--gray100); border-radius:20px; padding:40px 32px 32px; position:relative; display:flex; flex-direction:column; }
+  .plan-card.featured { border:2px solid var(--green); box-shadow:0 8px 40px rgba(0,182,122,0.14); }
+  .plan-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--green); color:white; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 14px; border-radius:99px; white-space:nowrap; }
+  .plan-name { font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--navy); text-align:center; margin-bottom:6px; }
+  .plan-card.featured .plan-name { color:var(--green); }
+  .plan-for { font-size:14px; color:var(--gray600); text-align:center; margin-bottom:24px; }
+  .plan-price { text-align:center; font-size:56px; font-weight:800; letter-spacing:-2px; color:var(--navy); line-height:1; }
+  .plan-card.featured .plan-price { color:var(--green); }
+  .plan-price small { font-size:18px; font-weight:500; color:var(--gray600); letter-spacing:0; }
+  .plan-price-note { text-align:center; font-size:14px; color:var(--gray600); margin:8px 0 28px; }
+  .plan-list-title { font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--gray400); margin-bottom:12px; }
+  .plan-list { list-style:none; margin-bottom:24px; flex:1; }
+  .plan-list li { position:relative; padding-left:28px; margin-bottom:10px; font-size:15px; color:var(--navy); line-height:1.5; }
+  .plan-list li::before { content:'✓'; position:absolute; left:0; top:0; color:var(--green); font-weight:800; }
+  .plan-extra { font-size:13px; color:var(--gray600); font-style:italic; margin-bottom:24px; line-height:1.5; }
+  .plan-btn { display:block; text-align:center; text-decoration:none; border-radius:10px; padding:14px 20px; font-family:'Outfit',sans-serif; font-size:16px; font-weight:700; transition:all .2s; }
+  .plan-btn.outline { border:1.5px solid var(--navy); color:var(--navy); }
+  .plan-btn.outline:hover { background:var(--navy); color:white; }
+  .plan-btn.solid { background:var(--green); color:white; }
+  .plan-btn.solid:hover { background:var(--green2); transform:translateY(-2px); }
+  .plans-fine { text-align:center; font-size:13px; color:var(--gray400); margin-top:28px; }
+
   .aseg { padding:80px 5%; background:var(--gray50); text-align:center; }
   .aseg p { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:1.5px; color:var(--gray400); margin-bottom:32px; }
   .aseg-logos { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; align-items:center; }
@@ -137,13 +163,14 @@
   <div class="hero-inner">
     <div class="hero-eyebrow"><span></span>Facturación médica sin complicaciones</div>
     <h1>Tú atiende pacientes.<br><em>Nosotros hacemos</em><br>el resto.</h1>
-    <p class="hero-sub">Tú nos mandas la carta de la aseguradora, nosotros gestionamos el pago y al final te entregamos un resumen para tu declaración. Todo con un mensaje de WhatsApp.</p>
+    <p class="hero-sub">Tú nos mandas la carta de la aseguradora, nosotros la facturamos, gestionamos el pago y le damos seguimiento hasta que cobras. Todo con un mensaje de WhatsApp.</p>
     <div class="hero-actions">
       <a class="btn-hero-primary" href="https://wa.me/9617079590?text=Hola%2C%20me%20interesa%20OGMpay" target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.534 5.859L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-5.064-1.407l-.364-.216-3.759.98.999-3.671-.237-.376A9.808 9.808 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         Escríbenos por WhatsApp
       </a>
       <a class="btn-hero-secondary" href="#como-funciona">Ver cómo funciona ↓</a>
+      <a class="btn-hero-secondary" href="#planes">Ver planes ↓</a>
     </div>
     <p class="hero-note">Sin letra chica. Solo resultados.</p>
   </div>
@@ -226,8 +253,8 @@
     </div>
     <div class="what-card fade-up">
       <div class="what-check">✓</div>
-      <h3>Resumen para declaración</h3>
-      <p>Cada mes recibes un PDF con todo organizado para llevar con tu contador o declarar tú mismo.</p>
+      <h3>Complementos de pago</h3>
+      <p>Emitimos el complemento de pago en cuanto la aseguradora deposita, sin que tengas que pedirlo ni recordarlo.</p>
     </div>
     <div class="what-card fade-up">
       <div class="what-check">✓</div>
@@ -240,6 +267,52 @@
       <p>Un mensaje y te respondemos. Sin tickets, sin formularios, sin esperas de 48 horas.</p>
     </div>
   </div>
+</section>
+
+<!-- PLANES -->
+<section class="plans" id="planes">
+  <div class="plans-header">
+    <div class="section-label">Planes</div>
+    <h2 class="fade-up">Elige la forma de trabajar<br>que va contigo.</h2>
+    <p class="plans-sub fade-up">Precio claro, sin costos ocultos. Dos opciones según si ya tienes contador o no.</p>
+  </div>
+  <div class="plans-grid">
+
+    <div class="plan-card fade-up">
+      <div class="plan-name">Plan Esencial</div>
+      <div class="plan-for">Si ya tienes contador</div>
+      <div class="plan-price">4%</div>
+      <div class="plan-price-note">sobre cada carta cobrada</div>
+      <div class="plan-list-title">Incluye</div>
+      <ul class="plan-list">
+        <li>Emisión de todas tus facturas (CFDI 4.0)</li>
+        <li>Complementos de pago</li>
+        <li>Carga en portales de aseguradoras</li>
+        <li>Seguimiento hasta el cobro</li>
+      </ul>
+      <p class="plan-extra">Lo fiscal lo ves directamente con tu contador; nosotros nos dedicamos a facturar.</p>
+      <a class="plan-btn outline" href="https://wa.me/9617079590?text=Hola%2C%20me%20interesa%20el%20Plan%20Esencial%20de%20OGMpay" target="_blank">Quiero el Plan Esencial</a>
+    </div>
+
+    <div class="plan-card featured fade-up">
+      <div class="plan-badge">Todo incluido</div>
+      <div class="plan-name">Plan Integral</div>
+      <div class="plan-for">Facturación + fiscal completo</div>
+      <div class="plan-price">$800<small>/mes</small></div>
+      <div class="plan-price-note">+ 4% sobre cada carta cobrada</div>
+      <div class="plan-list-title">Todo lo del Plan Esencial, más</div>
+      <ul class="plan-list">
+        <li>Asesoría fiscal 1 a 1 al iniciar</li>
+        <li>Declaraciones mensuales ante el SAT</li>
+        <li>Altas y bajas de regímenes fiscales</li>
+        <li>Acompañamiento de un contador</li>
+        <li>Cuota mensual fija, sin importar cuánto factures</li>
+      </ul>
+      <a class="plan-btn solid" id="btn-integral" href="https://wa.me/9617079590?text=Hola%2C%20quiero%20contratar%20el%20Plan%20Integral%20de%20OGMpay" target="_blank">Contratar Plan Integral</a>
+    </div>
+
+  </div>
+  <p class="plans-fine">La cuota de $800 es fija cada mes. La declaración anual, si la deseas, se cotiza por separado.</p>
 </section>
 
 <!-- ASEGURADORAS -->
@@ -287,6 +360,7 @@
   <a href="https://app.ogmpay.com" style="font-size:12px;color:rgba(255,255,255,0.25);text-decoration:none;">Acceso interno</a>
   <p>© 2026 OGMpay · Facturación médica · México</p>
 </div>
+</footer>
 
 <!-- WhatsApp flotante -->
 <a class="wa-float" href="https://wa.me/9617079590?text=Hola%2C%20me%20interesa%20OGMpay" target="_blank" aria-label="Escribir por WhatsApp">
@@ -298,6 +372,15 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Checkout de Clip ─────────────────────────────────────────
+  // Cuando tengas el link/checkout de Clip para el Plan Integral, pégalo aquí.
+  // Mientras esté vacío, el botón "Contratar Plan Integral" abre WhatsApp.
+  const CLIP_CHECKOUT_URL = '';
+  if (CLIP_CHECKOUT_URL) {
+    const btn = document.getElementById('btn-integral');
+    btn.href = CLIP_CHECKOUT_URL;
+  }
 </script>
 </body>
 </html>

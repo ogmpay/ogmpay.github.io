@@ -73,7 +73,7 @@
   .plans-header { text-align:center; max-width:640px; margin:0 auto 64px; }
   .plans h2 { font-size:clamp(28px,4vw,44px); font-weight:800; line-height:1.15; letter-spacing:-1px; color:var(--navy); margin-bottom:16px; }
   .plans-sub { font-size:17px; color:var(--gray600); line-height:1.6; }
-  .plans-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; max-width:900px; margin:0 auto; }
+  .plans-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:24px; max-width:1180px; margin:0 auto; }
   .plan-card { background:white; border:1px solid var(--gray100); border-radius:20px; padding:40px 32px 32px; position:relative; display:flex; flex-direction:column; }
   .plan-card.featured { border:2px solid var(--green); box-shadow:0 8px 40px rgba(0,182,122,0.14); }
   .plan-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--green); color:white; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 14px; border-radius:99px; white-space:nowrap; }
@@ -83,6 +83,8 @@
   .plan-price { text-align:center; font-size:56px; font-weight:800; letter-spacing:-2px; color:var(--navy); line-height:1; }
   .plan-card.featured .plan-price { color:var(--green); }
   .plan-price small { font-size:18px; font-weight:500; color:var(--gray600); letter-spacing:0; }
+  .plan-price.texto { font-size:38px; letter-spacing:-1px; padding:9px 0; }
+  .plan-aviso { background:#FFFBEB; border:1px solid #FDE68A; color:#92400E; border-radius:10px; padding:10px 12px; font-size:13px; line-height:1.45; margin-bottom:20px; }
   .plan-price-note { text-align:center; font-size:14px; color:var(--gray600); margin:8px 0 28px; }
   .plan-list-title { font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--gray400); margin-bottom:12px; }
   .plan-list { list-style:none; margin-bottom:24px; flex:1; }
@@ -274,7 +276,7 @@
   <div class="plans-header">
     <div class="section-label">Planes</div>
     <h2 class="fade-up">Elige la forma de trabajar<br>que va contigo.</h2>
-    <p class="plans-sub fade-up">Precio claro, sin costos ocultos. Dos opciones según si ya tienes contador o no.</p>
+    <p class="plans-sub fade-up">Precio claro, sin costos ocultos. Tres opciones según si ya tienes contador, si estás en RESICO o si tu práctica necesita algo a tu medida.</p>
   </div>
   <div class="plans-grid">
 
@@ -289,6 +291,7 @@
         <li>Complementos de pago</li>
         <li>Carga en portales de aseguradoras</li>
         <li>Seguimiento hasta el cobro</li>
+        <li>Portal médico: consulta tus facturas y descarga tu reporte mensual (PDF, XML y Excel)</li>
       </ul>
       <p class="plan-extra">Lo fiscal lo ves directamente con tu contador; nosotros nos dedicamos a facturar.</p>
       <a class="plan-btn outline" href="https://wa.me/9617079590?text=Hola%2C%20me%20interesa%20el%20Plan%20Esencial%20de%20OGMpay" target="_blank">Quiero el Plan Esencial</a>
@@ -297,8 +300,8 @@
     <div class="plan-card featured fade-up">
       <div class="plan-badge">Todo incluido</div>
       <div class="plan-name">Plan Integral</div>
-      <div class="plan-for">Facturación + fiscal completo</div>
-      <div class="plan-price">$800<small>/mes</small></div>
+      <div class="plan-for">Facturación + fiscal completo · Para médicos en RESICO</div>
+      <div class="plan-price">$1,000<small>/mes</small></div>
       <div class="plan-price-note">+ 4% sobre cada carta cobrada</div>
       <div class="plan-list-title">Todo lo del Plan Esencial, más</div>
       <ul class="plan-list">
@@ -308,11 +311,28 @@
         <li>Acompañamiento de un contador</li>
         <li>Cuota mensual fija, sin importar cuánto factures</li>
       </ul>
+      <p class="plan-aviso"><strong>Declaración anual:</strong> se cobra por separado. Te la cotizamos cuando la necesites.</p>
       <a class="plan-btn solid" id="btn-integral" href="https://wa.me/9617079590?text=Hola%2C%20quiero%20contratar%20el%20Plan%20Integral%20de%20OGMpay" target="_blank">Contratar Plan Integral</a>
     </div>
 
+    <div class="plan-card fade-up">
+      <div class="plan-name">Plan A la Medida</div>
+      <div class="plan-for">Para prácticas que no encajan en los otros planes</div>
+      <div class="plan-price texto">Cotización</div>
+      <div class="plan-price-note">según tu régimen y tu volumen</div>
+      <div class="plan-list-title">Ideal si</div>
+      <ul class="plan-list">
+        <li>Tributas fuera de RESICO (por ejemplo, régimen 612) o vas a cambiarte</li>
+        <li>Quieres aprovechar deducciones de tu consultorio</li>
+        <li>Tienes un volumen alto de cartas o varias fuentes de ingreso</li>
+        <li>Necesitas algo que no viene en los otros planes</li>
+      </ul>
+      <p class="plan-extra">Armamos el servicio contigo y sigues recibiendo una sola factura de OGMpay.</p>
+      <a class="plan-btn outline" href="https://wa.me/9617079590?text=Hola%2C%20me%20interesa%20un%20plan%20a%20la%20medida%20de%20OGMpay" target="_blank">Pedir mi cotización</a>
+    </div>
+
   </div>
-  <p class="plans-fine">La cuota de $800 es fija cada mes. La declaración anual, si la deseas, se cotiza por separado.</p>
+  <p class="plans-fine">La cuota del Plan Integral es fija cada mes y aplica mientras estés en RESICO. La declaración anual se cobra por separado.</p>
 </section>
 
 <!-- ASEGURADORAS -->

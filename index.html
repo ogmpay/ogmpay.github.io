@@ -185,6 +185,17 @@
 
   /* CTA final */
   .cta { padding:24px 0 104px; }
+  /* Gestoría de cartas */
+  .gestoria { margin-top:40px; background:var(--surface); border:1.5px solid var(--green); border-radius:var(--radius); padding:28px 32px; display:grid; grid-template-columns:auto 1fr auto; gap:28px; align-items:center; box-shadow:var(--shadow); }
+  .gestoria-icono { width:60px; height:60px; border-radius:16px; background:var(--green-tint); color:var(--green-text); display:grid; place-items:center; font-size:30px; }
+  .gestoria-tag { display:inline-block; font-size:13px; font-weight:600; color:var(--green-text); margin-bottom:4px; }
+  .gestoria h3 { font-size:24px; font-weight:700; letter-spacing:-0.02em; margin-bottom:4px; }
+  .gestoria p { color:var(--muted); font-size:16px; max-width:52ch; }
+  .gestoria-precio { text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+  .gestoria-monto { font-size:40px; font-weight:700; letter-spacing:-0.03em; line-height:1; }
+  .gestoria-sub { font-size:14px; color:var(--muted); line-height:1.4; margin-bottom:6px; }
+  .gestoria-sub strong { color:var(--text); font-weight:600; }
+
   /* Cuenta gratis */
   .gratis-panel { background:var(--green-tint); border-radius:28px; padding:56px; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; overflow:hidden; }
   .gratis-panel .h2 { text-wrap:balance; }
@@ -243,6 +254,8 @@
     .incluye-head { position:static; }
     .portal-grid { grid-template-columns:1fr; gap:36px; }
     .gratis-panel { grid-template-columns:1fr; padding:36px 22px; gap:36px; border-radius:24px; }
+    .gestoria { grid-template-columns:1fr; padding:24px 22px; gap:16px; }
+    .gestoria-precio { text-align:left; align-items:flex-start; }
     .phone-full { transform:none; width:min(260px, 82%); }
   }
   /* ── Celular ── */
@@ -392,11 +405,11 @@
       <div>
         <span class="gratis-tag revela"><i class="ph ph-gift" aria-hidden="true"></i>Gratis para médicos</span>
         <h2 id="titulo-gratis" class="h2 revela">¿Se te pierde la pista de tus cartas?</h2>
-        <p class="lead revela" style="--i:1">Te ayudamos con el registro. Anota a cada paciente en segundos desde tu celular, ubica qué cartas te faltan y cuáles ya te pagaron. Gratis y sin compromiso.</p>
+        <p class="lead revela" style="--i:1">Te ayudamos con el registro. Anota a cada paciente en segundos desde tu celular y sabe qué cartas te faltan y cuáles ya te pagaron. Gratis y sin compromiso.</p>
         <ul class="gratis-lista">
           <li class="revela"><i class="ph ph-device-mobile" aria-hidden="true"></i><div><h3>Registro en segundos</h3><p>Solo el nombre del paciente y el hospital. Tu liga queda como app en tu celular.</p></div></li>
           <li class="revela" style="--i:1"><i class="ph ph-list-checks" aria-hidden="true"></i><div><h3>Todo bajo control</h3><p>Marca cuándo pides la carta, cuándo llega y cuándo te pagan.</p></div></li>
-          <li class="revela" style="--i:2"><i class="ph ph-hand-heart" aria-hidden="true"></i><div><h3>Y si lo necesitas, te ayudamos</h3><p>Con un clic nos pides que demos seguimiento. Tú decides cuándo.</p></div></li>
+          <li class="revela" style="--i:2"><i class="ph ph-hand-heart" aria-hidden="true"></i><div><h3>Y si lo necesitas, te ayudamos</h3><p>Con la <a href="#gestoria" style="color:var(--green-text);font-weight:600;">Gestoría de cartas</a> las conseguimos por ti. Tú decides cuándo.</p></div></li>
         </ul>
         <div class="gratis-acciones revela" style="--i:3">
           <a class="btn btn-green" href="https://app.ogmpay.com/medico/?registro"><i class="ph ph-user-plus"></i>Crea tu cuenta gratis</a>
@@ -557,6 +570,21 @@
     </div>
   </div>
   <p class="planes-fino wrap">La cuota del Plan Integral es fija cada mes y aplica mientras estés en RESICO. La declaración anual se cobra por separado.</p>
+  <div class="wrap">
+    <div class="gestoria revela" id="gestoria">
+      <div class="gestoria-icono" aria-hidden="true"><i class="ph ph-envelope-simple-open"></i></div>
+      <div class="gestoria-copy">
+        <span class="gestoria-tag">Servicio adicional · para cualquier plan</span>
+        <h3>Gestoría de cartas</h3>
+        <p>¿No tienes tiempo de pedir tus cartas de honorarios? Nosotros las conseguimos por ti, para que ninguna se quede sin cobrar.</p>
+      </div>
+      <div class="gestoria-precio">
+        <div class="gestoria-monto">$250</div>
+        <div class="gestoria-sub">por carta conseguida.<br><strong>Si no la conseguimos, no pagas.</strong></div>
+        <a class="btn btn-green btn-sm js-wa" href="https://wa.me/529617079590?text=Hola%2C%20me%20interesa%20la%20Gestor%C3%ADa%20de%20cartas%20de%20OGMpay" target="_blank" rel="noopener"><i class="ph ph-whatsapp-logo"></i>Me interesa</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CTA FINAL -->
